@@ -21,62 +21,64 @@ class CommonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NavigationBarCubit, NavigationBarState>(
       builder: (context, state) {
-        return Scaffold(
-          body: pageList[state.pageNumber],
-          bottomNavigationBar: BottomAppBar(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.home_rounded),
-                    onPressed: () {
-                      BlocProvider.of<NavigationBarCubit>(context)
-                          .changeIndex(0);
-                    },
+        return SafeArea(
+          child: Scaffold(
+            body: pageList[state.pageNumber],
+            bottomNavigationBar: BottomAppBar(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: IconButton(
+                      icon: Icon(Icons.home_rounded),
+                      onPressed: () {
+                        BlocProvider.of<NavigationBarCubit>(context)
+                            .changeIndex(0);
+                      },
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.menu_book_rounded),
-                    onPressed: () {
-                      BlocProvider.of<NavigationBarCubit>(context)
-                          .changeIndex(1);
-                    },
+                  Expanded(
+                    child: IconButton(
+                      icon: Icon(Icons.menu_book_rounded),
+                      onPressed: () {
+                        BlocProvider.of<NavigationBarCubit>(context)
+                            .changeIndex(1);
+                      },
+                    ),
                   ),
-                ),
-                Expanded(child: new Text('')),
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () {
-                      BlocProvider.of<NavigationBarCubit>(context)
-                          .changeIndex(3);
-                    },
+                  Expanded(child: new Text('')),
+                  Expanded(
+                    child: IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {
+                        BlocProvider.of<NavigationBarCubit>(context)
+                            .changeIndex(3);
+                      },
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: IconButton(
-                    icon: Icon(Icons.menu_rounded),
-                    onPressed: () {
-                      BlocProvider.of<NavigationBarCubit>(context)
-                          .changeIndex(4);
-                    },
+                  Expanded(
+                    child: IconButton(
+                      icon: Icon(Icons.menu_rounded),
+                      onPressed: () {
+                        BlocProvider.of<NavigationBarCubit>(context)
+                            .changeIndex(4);
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
+              },
+              tooltip: 'Increment',
+              child: Icon(Icons.person),
+              elevation: 4.0,
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
-            },
-            tooltip: 'Increment',
-            child: Icon(Icons.person),
-            elevation: 4.0,
-          ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
         );
       },
     );
