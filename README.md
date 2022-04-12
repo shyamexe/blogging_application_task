@@ -2,14 +2,14 @@
 
 # 12-04-2022 
 
-## created project 
+ created project 
 
-## Added HomeScreen 
-  - *added bootum navigation bar
-  - *added Navigation Cubit and coneected
-  - *added titles 
-  - *added status icons
-  - *added home category tile
+ Added HomeScreen 
+  - added bootum navigation bar
+  - added Navigation Cubit and coneected
+  - added titles 
+  - added status icons
+  - added home category tile
   - added news tile
 
 
