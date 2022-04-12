@@ -5,12 +5,12 @@
 ## created project 
 
 ## Added HomeScreen 
-  -*added bootum navigation bar
-  -*added Navigation Cubit and coneected
-  -*added titles 
-  -*added status icons
-  -*added home category tile
-  -*added news tile
+  - *added bootum navigation bar
+  - *added Navigation Cubit and coneected
+  - *added titles 
+  - *added status icons
+  - *added home category tile
+  - added news tile
 
 
 ![Screenshot 2022-04-12 230725](https://user-images.githubusercontent.com/93277108/163021865-28ed79f2-6924-476e-a486-a6085df53b1f.png)
