@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AppTextStyle{
 
@@ -11,6 +12,12 @@ class AppTextStyle{
     color: Color(0xff0D253C),
     fontWeight: FontWeight.bold,
   );
+  static const homeTileTitle = TextStyle(
+    fontSize: 19,
+    color: Color(0xffffffff),
+    fontWeight: FontWeight.bold,
+  );
+
 
 }
 
