@@ -22,9 +22,9 @@ screenshot 12-04-2202
  updated HomeScreen 
   - changed icons
   
- added Article Screen
- added profile Screen
- added story screen
+  added Article Screen
+  added profile Screen
+  added story screen
 
 <table>
  <td>
