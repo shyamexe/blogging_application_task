@@ -5,9 +5,8 @@ class StatusIcon extends StatelessWidget {
   StatusIcon({
     Key? key,
   }) : super(key: key);
-
-  @override
   List<Color> _colors = [Color(0xFF826dc6), Color(0xFF5dd3f6)];
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
@@ -62,7 +61,7 @@ class StatusIcon extends StatelessWidget {
             ],
           ),
           Align(
-            alignment:const Alignment(.8,.2),
+            alignment: const Alignment(.8, .2),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Container(
@@ -71,18 +70,18 @@ class StatusIcon extends StatelessWidget {
                   padding: const EdgeInsets.all(2.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    child:Padding(
-                      padding: const EdgeInsets.all(2),
-                      child: const Icon(
-                        Icons.favorite,
-                        color: Colors.white,
-                        size: 12,
-                      ),
-                    ),
-                    color: Colors.orangeAccent,
-                  ),
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(2),
+                        child: const Icon(
+                          Icons.favorite,
+                          color: Colors.white,
+                          size: 12,
                         ),
+                      ),
+                      color: Colors.orangeAccent,
+                    ),
+                  ),
                 ),
               ),
             ),

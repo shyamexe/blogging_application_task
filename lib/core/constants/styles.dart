@@ -40,7 +40,26 @@ class AppTextStyle{
     color: Color(0xff2D4379),
     fontSize: 18,
   );
-  
+
+  static const profileJob= TextStyle(
+    color: Color(0xff376AED),
+    fontSize: 18,
+  );
+
+   static const profileAbout = TextStyle(
+    fontSize: 18,
+    color: Color(0xff0D253C),
+    fontWeight: FontWeight.bold,
+  );
+  static const profileTag= TextStyle(
+    color: Color(0xff7B8BB2),
+    fontSize: 10,
+  );
+  static const profileText= TextStyle(
+    height: 1.5 ,
+    color: Color(0xff2D4379),
+    fontSize: 15,
+  );
 
 
 }
