@@ -1,4 +1,3 @@
-import 'package:blogging_application/logic/cubit/navigation_bar_cubit.dart';
 import 'package:blogging_application/presentation/screens/article_screen/article_screen.dart';
 import 'package:blogging_application/presentation/screens/home_widget_screen/home_widget_screen.dart';
 import 'package:blogging_application/presentation/screens/menu_Screen/menu_screen.dart';
@@ -8,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../logic/navigation_bar_cubit/navigation_bar_cubit.dart';
+
 class CommonScreen extends StatelessWidget {
   final pageList = [
     HomeWigetScreen(),
@@ -16,6 +17,8 @@ class CommonScreen extends StatelessWidget {
     SearchScreen(),
     MenuScreen()
   ];
+  //navigation screen wiget list
+  //this widget usedfor home navigation
 
   @override
   Widget build(BuildContext context) {

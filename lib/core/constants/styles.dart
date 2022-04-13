@@ -60,6 +60,15 @@ class AppTextStyle{
     color: Color(0xff2D4379),
     fontSize: 15,
   );
+  static const statusTitle= TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+  );
+  static const statusTime= TextStyle(
+    color: Colors.white,
+    fontSize: 13,
+  );
 
 
 }

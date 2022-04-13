@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
+//cubit for storing navigatiion index
+
 class NavigationBarState extends Equatable {
   int pageNumber;
    NavigationBarState({required this.pageNumber});
