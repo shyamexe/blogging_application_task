@@ -2,8 +2,12 @@ import 'package:blogging_application/core/constants/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeTile extends StatelessWidget {
-  const HomeTile({
+  String image;
+  String title;
+   HomeTile({
     Key? key,
+    required this.image,
+    required this.title
   }) : super(key: key);
 
   @override
@@ -18,15 +22,15 @@ class HomeTile extends StatelessWidget {
           child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(
-                        "https://img.freepik.com/free-photo/virtual-reality-helmet-white-background-neon-light-vr-future-gadgets-technology-concept_308589-2781.jpg",
+                      image: AssetImage(
+                        image,
                       ),
                       fit: BoxFit.cover)),
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Padding(
                   padding: EdgeInsets.all(10),
-                  child: Text('Technology',style: AppTextStyle.homeTileTitle,),
+                  child: Text(title,style: AppTextStyle.homeTileTitle,),
                 ),
               )),
         ),

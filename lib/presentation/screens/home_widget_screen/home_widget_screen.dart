@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:blogging_application/core/constants/styles.dart';
+import 'package:blogging_application/presentation/screens/home_widget_screen/widgets/article_view.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/home_tile.dart';
@@ -60,6 +61,7 @@ class HomeWigetScreen extends StatelessWidget {
                   height: 80,
                   width: size.width,
                   child: ListView(
+                    physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     children: [
                       StatusIcon(),
@@ -86,14 +88,25 @@ class HomeWigetScreen extends StatelessWidget {
                   height: 300,
                   width: size.width,
                   child: ListView(
+                    physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     children: [
-                      HomeTile(),
-                      HomeTile(),
-                      HomeTile(),
-                      HomeTile(),
-                      HomeTile(),
-                      HomeTile(),
+                      HomeTile(
+                        image: 'assets/images/image3.png',
+                        title: 'Technology',
+                      ),
+                      HomeTile(
+                        image: 'assets/images/image4.png',
+                        title: 'Adventure',
+                      ),
+                      HomeTile(
+                        image: 'assets/images/image3.png',
+                        title: 'Technology',
+                      ),
+                      HomeTile(
+                        image: 'assets/images/image4.png',
+                        title: 'Adventure',
+                      ),
                     ],
                   ),
                 ),
@@ -103,7 +116,7 @@ class HomeWigetScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         'Latest News',
                         style: TextStyle(
@@ -114,9 +127,13 @@ class HomeWigetScreen extends StatelessWidget {
                     ],
                   )),
               AppWIdget.sizeHeight20,
-              NewsTile(),
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ArticleView()));
+                },
+                child: NewsTile(),
+              ),
               AppWIdget.sizeHeight10,
-              
             ],
           ),
         ));

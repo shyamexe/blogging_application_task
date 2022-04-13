@@ -6,7 +6,7 @@ import 'package:blogging_application/presentation/screens/profile_screen/profile
 import 'package:blogging_application/presentation/screens/search_screen/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CommonScreen extends StatelessWidget {
   final pageList = [
@@ -30,7 +30,9 @@ class CommonScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: IconButton(
-                      icon: Icon(Icons.home_rounded),
+                      icon: state.pageNumber==0?
+                        SvgPicture.asset('assets/icons/home_svg.svg')
+                        :SvgPicture.asset('assets/icons/home_svg.svg',color: Colors.grey),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(0);
@@ -39,7 +41,7 @@ class CommonScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: IconButton(
-                      icon: Icon(Icons.menu_book_rounded),
+                      icon:SvgPicture.asset('assets/icons/article_svg.svg',),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(1);
@@ -49,7 +51,7 @@ class CommonScreen extends StatelessWidget {
                   Expanded(child: new Text('')),
                   Expanded(
                     child: IconButton(
-                      icon: Icon(Icons.search),
+                      icon: SvgPicture.asset('assets/icons/search_svg.svg'),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(3);
@@ -58,7 +60,7 @@ class CommonScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: IconButton(
-                      icon: Icon(Icons.menu_rounded),
+                      icon: SvgPicture.asset('assets/icons/menu_svg.svg'),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(4);
@@ -73,7 +75,7 @@ class CommonScreen extends StatelessWidget {
                 BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
               },
               tooltip: 'Increment',
-              child: Icon(Icons.person),
+              child: SvgPicture.asset('assets/icons/user_svg.svg'),
               elevation: 4.0,
             ),
             floatingActionButtonLocation:

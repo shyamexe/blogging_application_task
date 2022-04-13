@@ -12,11 +12,35 @@ class AppTextStyle{
     color: Color(0xff0D253C),
     fontWeight: FontWeight.bold,
   );
+  static const title = TextStyle(
+    fontSize: 25,
+    color: Color(0xff0D253C),
+  );
   static const homeTileTitle = TextStyle(
     fontSize: 19,
     color: Color(0xffffffff),
     fontWeight: FontWeight.bold,
   );
+
+  static const userTitleblue= TextStyle(
+    color: Color(0xff2D4379),
+    fontSize: 15,
+  );
+  static const userTimeGrey= TextStyle(
+    color: Color(0xff7B8BB2),
+    fontSize: 10,
+  );
+
+  static const articleTitle = TextStyle(
+    fontSize: 25,
+    color: Color(0xff0D253C),
+    fontWeight: FontWeight.w500,
+  );
+  static const articleText= TextStyle(
+    color: Color(0xff2D4379),
+    fontSize: 18,
+  );
+  
 
 
 }
