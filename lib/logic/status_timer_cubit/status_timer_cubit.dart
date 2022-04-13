@@ -13,26 +13,39 @@ class StatusTimerState extends Equatable {
 }
 
 class StatusTimerCubit extends Cubit<StatusTimerState> {
+  StatusIndexCubit statusIndexCubit;
+  StatusTimerCubit({required this.statusIndexCubit}) : super(StatusTimerState(timer: 0));
 
-  StatusTimerCubit() : super(StatusTimerState(timer: 0));
-
-  startTimer(){
+  startTimer(length){
 
     late Timer _timer;
 
     state.timer=0;
 
-    const oneSec = Duration(seconds: 1);
+    const oneMili = Duration(milliseconds: 10);
 
-    _timer=Timer.periodic(oneSec*.5, (Timer) { 
+    _timer=Timer.periodic(oneMili, (Timer) { 
 
       if(state.timer <= 1){
-        print(state.timer);
-        emit(StatusTimerState(timer: state.timer+0.1));
+       print(state.timer);
+        emit(StatusTimerState(timer: state.timer+0.002));
       }else{
+        if(length-1 != statusIndexCubit.state.index){
+          statusIndexCubit.updateStatus();
+          startTimer(length);
+          }
+        
+       
         _timer.cancel();
       }
+       
     });
     
+  }
+
+  @override
+  Future<void> close() async{
+    
+    return super.close();
   }
 }

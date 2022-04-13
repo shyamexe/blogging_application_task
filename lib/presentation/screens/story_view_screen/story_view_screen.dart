@@ -17,13 +17,13 @@ class StoryViewScreen extends StatelessWidget {
       text:
           'One reason. 60% of the global population are netizens. And also the future generations will be heavily dependent on the internet.',
     ),
-    StoryData(image: 'assets/images/statusbg.png'),
-    StoryData(image: 'assets/images/statusbg.png'),
+    StoryData(image: 'assets/images/image3.png'),
+    StoryData(image: 'assets/images/articlebg.png'),
   ]; //this list contain status data
 
   @override
   Widget build(BuildContext context) {
-    context.read<StatusTimerCubit>().startTimer();
+    context.read<StatusTimerCubit>().startTimer(_widgets.length);
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
@@ -106,10 +106,15 @@ class StoryViewScreen extends StatelessWidget {
                             return BlocBuilder<StatusIndexCubit, StatusIndexState>(
                               builder: (context, indexState) {
                                 if(index==indexState.index){
+                                  if (index==_widgets.length) {
+                                  //  context.read<StatusTimerCubit>().close();
+                                  Navigator.of(context).pop();
+                                  }
                                   return LinearProgressIndicator(
                                   value: timeState.timer,
                                   backgroundColor: Colors.grey.withOpacity(.5),
                                   color: Colors.white,
+                                  
                                 );
                                 }if (index<indexState.index) {
                                   return LinearProgressIndicator(

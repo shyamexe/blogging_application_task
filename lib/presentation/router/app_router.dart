@@ -19,13 +19,14 @@ class AppRouter {
       case home:
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(providers: [
-                  BlocProvider(create: (context) => NavigationBarCubit())
+                  BlocProvider(create: (context) => NavigationBarCubit()),
+                  BlocProvider(create: (context) => StatusIndexCubit())
                 ], child: CommonScreen()));
       case status:
         return MaterialPageRoute(
-            builder: (_) => MultiBlocProvider(providers: [
-                  BlocProvider(create: (context) => StatusTimerCubit()),
-                  BlocProvider(create: (context) => StatusIndexCubit()),
+            builder: (context) => MultiBlocProvider(providers: [
+                  BlocProvider(create: (context) => StatusTimerCubit(statusIndexCubit: context.read<StatusIndexCubit>())),
+                  BlocProvider.value(value: context.read<StatusIndexCubit>() )
                 ], child: StoryViewScreen()));
 
       default:
