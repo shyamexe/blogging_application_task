@@ -45,8 +45,8 @@ class StatusIcon extends StatelessWidget {
                                 padding: EdgeInsets.all(3),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(15),
-                                  child: Image.network(
-                                      'https://user-images.githubusercontent.com/93277108/162989002-6953530e-991e-4d42-ae4f-2cd0912ca855.jpg'),
+                                  child: Image.asset(
+                                      'assets/images/image5.png',fit: BoxFit.cover,),
                                 ),
                               ),
                             ),

@@ -23,8 +23,8 @@ class NewsTile extends StatelessWidget {
                     height: 120,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          "https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-creative-technology-wind-vr-technology-psd-layering-image_194855.jpg",
+                        child: Image.asset(
+                          "assets/images/image1.png",
                           fit: BoxFit.cover,
                         )),
                   )),
