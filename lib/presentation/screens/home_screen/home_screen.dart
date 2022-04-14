@@ -33,9 +33,10 @@ class CommonScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: IconButton(
-                      icon: state.pageNumber==0?
-                        SvgPicture.asset('assets/icons/home_svg.svg')
-                        :SvgPicture.asset('assets/icons/home_svg.svg',color: Colors.grey),
+                      icon: state.pageNumber == 0
+                          ? SvgPicture.asset('assets/icons/home_svg.svg')
+                          : SvgPicture.asset('assets/icons/home_svg.svg',
+                              color: Colors.grey),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(0);
@@ -44,7 +45,9 @@ class CommonScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: IconButton(
-                      icon:SvgPicture.asset('assets/icons/article_svg.svg',),
+                      icon: SvgPicture.asset(
+                        'assets/icons/article_svg.svg',
+                      ),
                       onPressed: () {
                         BlocProvider.of<NavigationBarCubit>(context)
                             .changeIndex(1);
@@ -73,14 +76,39 @@ class CommonScreen extends StatelessWidget {
                 ],
               ),
             ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
+            floatingActionButton: InkWell(
+              onTap: () {
                 BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
               },
-              tooltip: 'Increment',
-              child: SvgPicture.asset('assets/icons/user_svg.svg'),
-              elevation: 4.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.all(4),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      color: Color(0xff376AED),
+                      child: Icon(
+                        Icons.person,
+                        size: 30,
+                        color: Color(0xff8FE6FF),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
+            // floatingActionButton: FloatingActionButton(
+            //   onPressed: () {
+            //     BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
+            //   },
+            //   tooltip: 'Increment',
+            //   child: SvgPicture.asset('assets/icons/user_svg.svg'),
+            //   elevation: 4.0,
+            // ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
           ),
