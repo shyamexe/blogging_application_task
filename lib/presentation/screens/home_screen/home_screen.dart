@@ -84,12 +84,12 @@ class CommonScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 child: Container(
                   color: Colors.white,
-                  padding: EdgeInsets.all(4),
+                  padding: EdgeInsets.all(5),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(25),
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      height: 50,
+                      width: 50,
                       color: Color(0xff376AED),
                       child: Icon(
                         Icons.person,
@@ -101,14 +101,6 @@ class CommonScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: () {
-            //     BlocProvider.of<NavigationBarCubit>(context).changeIndex(2);
-            //   },
-            //   tooltip: 'Increment',
-            //   child: SvgPicture.asset('assets/icons/user_svg.svg'),
-            //   elevation: 4.0,
-            // ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
           ),

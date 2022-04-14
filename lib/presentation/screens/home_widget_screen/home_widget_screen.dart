@@ -12,8 +12,11 @@ class HomeWigetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
+        backgroundColor: Color(0xffF4F7FF),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,

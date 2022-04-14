@@ -10,7 +10,7 @@ class StatusTimerState extends Equatable {
 
   @override
   List<Object> get props => [timer];
-}
+}//timer cubit for story pogression
 
 class StatusTimerCubit extends Cubit<StatusTimerState> {
   StatusIndexCubit statusIndexCubit;

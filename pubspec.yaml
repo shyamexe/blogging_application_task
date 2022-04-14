@@ -45,6 +45,12 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.1.5
+
+  
+flutter_native_splash:
+  background_image: assets/images/bg.png
+  image: assets/images/logo.png
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

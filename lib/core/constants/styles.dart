@@ -70,6 +70,19 @@ class AppTextStyle{
     fontSize: 13,
   );
 
+  static const titleBlack= TextStyle(
+    color: Color(0xff0D253C),
+    fontSize: 24,
+    overflow: TextOverflow.visible,
+    fontWeight: FontWeight.bold
+  );
+
+  static const textBlack= TextStyle(
+    color: Color(0xff2D4379),
+    fontSize: 15,
+    overflow: TextOverflow.visible,
+  );
+
 
 }
 
