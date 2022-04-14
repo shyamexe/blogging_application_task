@@ -41,6 +41,26 @@ screenshot 12-04-2202
   </td>
 </table>
 
+-
+# 14-04-2022 
+
+ - added added login screen
+ - added onboarding screen
+ - added added splash screen
+
+
+<table>
+ <td>
+   <img src="https://user-images.githubusercontent.com/93277108/163430376-721bdfaa-fa1d-4e3f-a8ff-bed1d6ede895.png">
+  </td>
+ <td>
+   <img src="https://user-images.githubusercontent.com/93277108/163430660-0a27993b-77f8-404c-b9a6-de2ecca76847.png">
+  </td>
+ <td>
+   <img src="https://user-images.githubusercontent.com/93277108/163430777-a6e9cde0-6855-473c-860d-8817ae026d04.png">
+ </td>
+</table>
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
