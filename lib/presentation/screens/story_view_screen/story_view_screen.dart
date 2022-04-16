@@ -79,6 +79,7 @@ class StoryViewScreen extends StatelessWidget {
                   InkWell(
                       onTap: () {
                         Navigator.of(context).pop();
+                        // context.read<StatusTimerCubit>().close();
                       },
                       child: SvgPicture.asset('assets/icons/close_svg.svg')),
                 ],

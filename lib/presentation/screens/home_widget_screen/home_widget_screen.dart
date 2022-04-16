@@ -1,20 +1,55 @@
 import 'package:badges/badges.dart';
 import 'package:blogging_application/core/constants/styles.dart';
+import 'package:blogging_application/logic/scroll_data_cubit/scroll_data_cubit.dart';
 import 'package:blogging_application/presentation/screens/home_widget_screen/widgets/article_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'widgets/home_tile.dart';
 import 'widgets/news_tile.dart';
 import 'widgets/status_icon.dart';
 
-class HomeWigetScreen extends StatelessWidget {
-  const HomeWigetScreen({Key? key}) : super(key: key);
+class HomeWigetScreen extends StatefulWidget {
+  HomeWigetScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeWigetScreen> createState() => _HomeWigetScreenState();
+}
+
+class _HomeWigetScreenState extends State<HomeWigetScreen> {
+  ScrollController scrollController = ScrollController();
+
+  final List adlist = [
+    HomeTile(
+      image: 'assets/images/image3.png',
+      title: 'Technology',
+    ),
+    HomeTile(
+      image: 'assets/images/image4.png',
+      title: 'Adventure',
+    ),
+    HomeTile(
+      image: 'assets/images/image3.png',
+      title: 'Technology',
+    ),
+    HomeTile(
+      image: 'assets/images/image4.png',
+      title: 'Adventure',
+    ),
+  ];
+
+  @override
+  void initState() {
+    scrollController.addListener(() {
+      print(scrollController.offset);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
-    
+
     return Scaffold(
         backgroundColor: Color(0xffF4F7FF),
         extendBodyBehindAppBar: true,
@@ -90,27 +125,19 @@ class HomeWigetScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 300,
                   width: size.width,
-                  child: ListView(
-                    physics: BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      HomeTile(
-                        image: 'assets/images/image3.png',
-                        title: 'Technology',
-                      ),
-                      HomeTile(
-                        image: 'assets/images/image4.png',
-                        title: 'Adventure',
-                      ),
-                      HomeTile(
-                        image: 'assets/images/image3.png',
-                        title: 'Technology',
-                      ),
-                      HomeTile(
-                        image: 'assets/images/image4.png',
-                        title: 'Adventure',
-                      ),
-                    ],
+                  child: BlocBuilder<ScrollDataCubit, ScrollDataState>(
+                    builder: (context, scrolstate) {
+                      
+                      return ListView.builder(
+                        controller: scrollController,
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: adlist.length,
+                        itemBuilder: (context, index) {
+                          return adlist[index];
+                        },
+                      );
+                    },
                   ),
                 ),
               ),
@@ -131,8 +158,9 @@ class HomeWigetScreen extends StatelessWidget {
                   )),
               AppWIdget.sizeHeight20,
               InkWell(
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ArticleView()));
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ArticleView()));
                 },
                 child: NewsTile(),
               ),

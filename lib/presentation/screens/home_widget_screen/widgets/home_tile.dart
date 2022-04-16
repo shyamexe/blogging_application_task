@@ -15,8 +15,10 @@ class HomeTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: SizedBox(
-        height: 280,
-        width: 230,
+        // height: 280,
+        // width: 230,
+        height: 230,
+        width: 180,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(

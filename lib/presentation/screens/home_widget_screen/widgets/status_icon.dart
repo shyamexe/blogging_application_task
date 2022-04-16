@@ -1,4 +1,5 @@
 import 'package:blogging_application/logic/status_indux_cubit/status_index_cubit.dart';
+import 'package:blogging_application/logic/status_timer_cubit/status_timer_cubit.dart';
 import 'package:blogging_application/presentation/screens/story_view_screen/story_view_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -13,8 +14,9 @@ class StatusIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).pushNamed('/status');
+      onTap: ()async {
+        await Navigator.of(context).pushNamed('/status');
+        context.read<StatusTimerCubit>().close();
       },
       child: Container(
         height: 80,

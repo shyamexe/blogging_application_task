@@ -16,9 +16,11 @@ class StatusTimerCubit extends Cubit<StatusTimerState> {
   StatusIndexCubit statusIndexCubit;
   StatusTimerCubit({required this.statusIndexCubit}) : super(StatusTimerState(timer: 0));
 
+  late Timer _timer;
+
   startTimer(length){
 
-    late Timer _timer;
+    
 
     state.timer=0;
 
@@ -26,8 +28,7 @@ class StatusTimerCubit extends Cubit<StatusTimerState> {
 
     _timer=Timer.periodic(oneMili, (Timer) { 
 
-      if(state.timer <= 1){
-       print(state.timer);
+      if(state.timer < 1){
         emit(StatusTimerState(timer: state.timer+0.002));
       }else{
         if(length-1 != statusIndexCubit.state.index){
@@ -44,8 +45,9 @@ class StatusTimerCubit extends Cubit<StatusTimerState> {
   }
 
   @override
-  Future<void> close() async{
+  Future<void> close() {
     
+    _timer.cancel();
     return super.close();
   }
 }

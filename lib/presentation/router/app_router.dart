@@ -1,4 +1,5 @@
 import 'package:blogging_application/logic/onboading_page_cubit/onboarding_page_cubit.dart';
+import 'package:blogging_application/logic/scroll_data_cubit/scroll_data_cubit.dart';
 import 'package:blogging_application/logic/status_indux_cubit/status_index_cubit.dart';
 import 'package:blogging_application/logic/status_timer_cubit/status_timer_cubit.dart';
 import 'package:blogging_application/presentation/screens/login_screen/login_screen.dart';
@@ -25,7 +26,9 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => NavigationBarCubit()),
-                  BlocProvider(create: (context) => StatusIndexCubit())
+                  BlocProvider(create: (context) => StatusIndexCubit()),
+                  BlocProvider(create: (context) => ScrollDataCubit())
+                  
                 ], child: CommonScreen()));
 
       case onboarding:
