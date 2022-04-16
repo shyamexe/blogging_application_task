@@ -308,7 +308,7 @@ class ProfileScreen extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.network(
-                          'https://user-images.githubusercontent.com/93277108/162989002-6953530e-991e-4d42-ae4f-2cd0912ca855.jpg'),
+                          'assets/images/image5.png'),
                     ),
                   ),
                 ),
