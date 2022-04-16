@@ -42,6 +42,7 @@ class _HomeWigetScreenState extends State<HomeWigetScreen> {
   void initState() {
     scrollController.addListener(() {
       print(scrollController.offset);
+      context.read<ScrollDataCubit>().updateScroll(scrollController.offset);
     });
     super.initState();
   }
@@ -49,7 +50,6 @@ class _HomeWigetScreenState extends State<HomeWigetScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
         backgroundColor: Color(0xffF4F7FF),
         extendBodyBehindAppBar: true,
@@ -120,25 +120,65 @@ class _HomeWigetScreenState extends State<HomeWigetScreen> {
                 ),
               ),
               AppWIdget.sizeHeight20,
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: SizedBox(
-                  height: 300,
-                  width: size.width,
-                  child: BlocBuilder<ScrollDataCubit, ScrollDataState>(
-                    builder: (context, scrolstate) {
-                      
-                      return ListView.builder(
-                        controller: scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: adlist.length,
-                        itemBuilder: (context, index) {
-                          return adlist[index];
-                        },
-                      );
-                    },
-                  ),
+              SizedBox(
+                height: 300,
+                width: size.width,
+                child: BlocBuilder<ScrollDataCubit, ScrollDataState>(
+                  builder: (context, scrolstate) {
+                    return ListView.builder(
+                      controller: scrollController,
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: adlist.length,
+                      itemBuilder: (context, index) {
+                        if (scrolstate.index < 150) {
+                          if (index == 0) {
+                            return Padding(padding: EdgeInsets.only(left: 20),
+                              child: adlist[0],);
+                          } else {
+                            return Transform.scale(
+                              alignment: Alignment.topCenter,
+                              scale: .8,
+                              child: adlist[index],
+                            );
+                          }
+                        } else if (150 < scrolstate.index &&
+                            scrolstate.index < 360) {
+                          if (index == 1) {
+                            return adlist[1];
+                          } else {
+                            return Transform.scale(
+                              scale: .8,
+                              alignment: Alignment.topCenter,
+                              child: adlist[index],
+                            );
+                          }
+                        } else if (360 < scrolstate.index &&
+                            scrolstate.index < 530) {
+                          if (index == 2) {
+                            return adlist[2];
+                          } else {
+                            return Transform.scale(
+                              alignment: Alignment.topCenter,
+                              scale: .8,
+                              child: adlist[index],
+                            );
+                          }
+                        } else {
+                          if (index == 3) {
+                            return Padding(padding: EdgeInsets.only(right: 30), child: adlist[3],
+                            );
+                          } else {
+                            return Transform.scale(
+                              alignment: Alignment.topCenter,
+                              scale: .8,
+                              child: adlist[index],
+                            );
+                          }
+                        }
+                      },
+                    );
+                  },
                 ),
               ),
               AppWIdget.sizeHeight30,

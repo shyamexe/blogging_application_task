@@ -20,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
                 return Align(
                   alignment: Alignment.bottomCenter,
                   child: ClipRRect(
-                    borderRadius:const BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(35),
                         topRight: Radius.circular(35)),
                     child: Container(
@@ -32,22 +32,20 @@ class OnboardingScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           const Padding(
-                            padding:  EdgeInsets.only(top: 10),
+                            padding: EdgeInsets.only(top: 10),
                             child: Text(
                               'Read the article you want instantly',
                               style: AppTextStyle.titleBlack,
                             ),
                           ),
-        
                           const Padding(
-                            padding:  EdgeInsets.all(10),
-                            child:  Text(
-                                'You can read thousands of articles on Blog Club, save them in the application and share them with your loved ones.',
-                                style: AppTextStyle.textBlack,
-                                textScaleFactor: 1.1,
-                              ),
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              'You can read thousands of articles on Blog Club, save them in the application and share them with your loved ones.',
+                              style: AppTextStyle.textBlack,
+                              textScaleFactor: 1.1,
+                            ),
                           ),
-                          
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
@@ -55,7 +53,6 @@ class OnboardingScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
-                                  
                                   children: [
                                     indicatorWidget(0 == state.pageNo),
                                     indicatorWidget(1 == state.pageNo),
@@ -98,6 +95,105 @@ class OnboardingScreen extends StatelessWidget {
                 );
               },
             ),
+            Align(
+              alignment: Alignment(0, -.3),
+              child: Container(
+                width: size.width,
+                height: size.height * .5,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              boxShadow: const [
+                                BoxShadow(
+                                  offset: Offset(2, 2),
+                                  blurRadius: 12,
+                                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/image1.png',
+                                  ),
+                                  fit: BoxFit.cover)),
+                          width: size.width * .2,
+                          height: 100,
+                        ),
+                        AppWIdget.sizeWidth20,
+                        Container(
+                           decoration: BoxDecoration(
+                              boxShadow: const [
+                                BoxShadow(
+                                  offset: Offset(2, 2),
+                                  blurRadius: 12,
+                                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/image2.png',
+                                  ),
+                                  fit: BoxFit.cover)),
+                          width: size.width * .4,
+                          height: 100,
+                          
+                        )
+                      ],
+                    ),
+                    AppWIdget.sizeHeight20,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: size.width * .4,
+                          height: 100,
+                           decoration: BoxDecoration(
+                              boxShadow: const [
+                                BoxShadow(
+                                  offset: Offset(2, 2),
+                                  blurRadius: 12,
+                                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/image3.png',
+                                  ),
+                                  fit: BoxFit.cover)),
+                        ),
+                        AppWIdget.sizeWidth20,
+                        Container(
+                          width: size.width * .2,
+                          height: 100,
+                           decoration: BoxDecoration(
+                              boxShadow: const [
+                                BoxShadow(
+                                  offset: Offset(2, 2),
+                                  blurRadius: 12,
+                                  color: Color.fromRGBO(0, 0, 0, 0.16),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/images/image4.png',
+                                  ),
+                                  fit: BoxFit.cover)),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

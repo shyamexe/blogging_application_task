@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class ScrollDataState extends Equatable {
-  int index;
+  double index;
   ScrollDataState({required this.index});
 
   @override
@@ -15,6 +15,8 @@ class ScrollDataState extends Equatable {
 class ScrollDataCubit extends Cubit<ScrollDataState> {
   ScrollDataCubit() : super(ScrollDataState(index: 0));
   
-
+ updateScroll(double value){
+   emit(ScrollDataState(index: value));
+ }
  
 }
