@@ -74,14 +74,22 @@ class StoryData extends StatelessWidget {
                       style: TextStyle(color: Color(0xff376AED)),
                     )),
               ),
-              Flexible(
+               Flexible(
                 fit: FlexFit.tight,
                 flex: 1,
-                child: Center(
-                    child: Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                )),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const[
+                     Center(
+                        child: Icon(
+                      Icons.favorite,
+                      size: 40,
+                      color: Colors.red,
+                    )),
+                    Text('450 K',style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold),)
+                  ],
+                ),
               ),
             ],
           ),
