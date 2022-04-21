@@ -70,7 +70,7 @@ screenshot 12-04-2202
  - changed homescreen tile
 
 
-
+ - [apk-download](https://drive.google.com/file/d/1qCcAiku6Qyt5M4QBAXZi0m51zach-lOa/view?usp=sharing)
 
 <table>
  <td>
