@@ -27,27 +27,22 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  badges: ^2.0.2
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
-  badges: ^2.0.2
-  flutter_svg: ^1.0.3
+  flutter_html: ^2.2.1
+  flutter_svg:
+  http: ^0.13.4
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  flutter_native_splash: ^2.1.5
   flutter_test:
     sdk: flutter
-  flutter_native_splash: ^2.1.5
 
-  
 flutter_native_splash:
   background_image: assets/images/bg.png
   image: assets/images/logo.png

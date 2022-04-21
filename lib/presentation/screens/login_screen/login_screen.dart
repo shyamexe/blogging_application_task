@@ -148,7 +148,8 @@ class LogInScreen extends StatelessWidget {
           AppWIdget.sizeHeight30,
           InkWell(
             onTap: (){
-              Navigator.of(context).pushReplacementNamed('/');
+              // Navigator.of(context).pushReplacementNamed('/');
+              Navigator.pop(context);
             },
             child: Container(
               height: 50,

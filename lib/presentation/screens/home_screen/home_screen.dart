@@ -1,3 +1,5 @@
+import 'package:blogging_application/logic/post_content_cubit/post_content_cubit.dart';
+import 'package:blogging_application/logic/post_cubit/post_cubit.dart';
 import 'package:blogging_application/presentation/screens/article_screen/article_screen.dart';
 import 'package:blogging_application/presentation/screens/home_widget_screen/home_widget_screen.dart';
 import 'package:blogging_application/presentation/screens/menu_Screen/menu_screen.dart';
@@ -12,7 +14,14 @@ import '../../../logic/navigation_bar_cubit/navigation_bar_cubit.dart';
 class CommonScreen extends StatelessWidget {
   final pageList = [
     HomeWigetScreen(),
-    ArticleScreen(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => PostCubit(),
+        ),
+      ],
+      child: ArticleScreen(),
+    ),
     ProfileScreen(),
     SearchScreen(),
     MenuScreen()

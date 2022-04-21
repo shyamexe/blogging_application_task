@@ -17,6 +17,7 @@ class AppRouter {
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String status = '/status';
+  static const String article = '/article';
 
   const AppRouter._();
 
